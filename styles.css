@@ -67,6 +67,18 @@ button {
     margin-top: 8px;
 }
 
+#result {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e8f5e9;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 18px;
+    color: #2e7d32;
+    display: none;
+}
+
+
 
 
 
