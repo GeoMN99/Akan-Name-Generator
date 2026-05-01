@@ -5,3 +5,15 @@ body {
     justify-content: center;
     padding: 40px 20px;
 }
+
+/* --- Containers --- */
+
+.container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
