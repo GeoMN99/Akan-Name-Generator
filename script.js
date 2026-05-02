@@ -1,13 +1,13 @@
 // Arrays for Akan names based on day of the week
-var maleNames = ["Kwasi", "Kwado", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
-var femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
+const maleNames = ["Kwasi", "Kwado", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
 function getAkanName() {
     //Get user input
-    var day = parseInt(document.getElementById("day").value);
-    var month = parseInt(document.getElementById("month").value);
-    var month = parseInt(document.getElementById("year").value);
-    var gender = document.getElementById("gender").value;
+    const day = parseInt(document.getElementById("day").value);
+    const month = parseInt(document.getElementById("month").value);
+    const month = parseInt(document.getElementById("year").value);
+    const gender = document.getElementById("gender").value;
 
     // Validate inputs
     if (isNaN(day) || day < 1 || day > 31) {
@@ -33,16 +33,24 @@ function getAkanName() {
 
 
 // Calculate the day of the week using provided formula
-var CC = Math.floor(year / 100);
-var YY = year % 100;
-var MM = month;
-var DD = day;
+const CC = Math.floor(year / 100);
+const YY = year % 100;
+const MM = month;
+const DD = day;
 
-var d = (Math.floor((4 * CC - 2 * -1) + (45 * YY) + (1026 * (MM +1)) + DD)) % 7;
+let d = (Math.floor((4 * CC - 2 * -1) + (45 * YY) + (1026 * (MM +1)) + DD)) % 7;
 
  // Make sure d is not negative
   if (d < 0) {
     d = d + 7;
+  }
+
+  // Pick name based on gender
+    let akanName = "";
+  if (gender === "male") {
+    akanName = maleNames[d];
+  } else {
+    akanName = femaleNames[d];
   }
 
   
