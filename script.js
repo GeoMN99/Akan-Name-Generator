@@ -40,4 +40,9 @@ var DD = day;
 
 var d = (Math.floor((4 * CC - 2 * -1) + (45 * YY) + (1026 * (MM +1)) + DD)) % 7;
 
-// Make
+ // Make sure d is not negative
+  if (d < 0) {
+    d = d + 7;
+  }
+
+  
