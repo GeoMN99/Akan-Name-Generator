@@ -6,7 +6,7 @@ function getAkanName() {
     //Get user input
     const day = parseInt(document.getElementById("day").value);
     const month = parseInt(document.getElementById("month").value);
-    const month = parseInt(document.getElementById("year").value);
+    const year = parseInt(document.getElementById("year").value);
     const gender = document.getElementById("gender").value;
 
     // Validate inputs
@@ -55,5 +55,5 @@ function getAkanName() {
   // Show the Result
   const resultDiv = document.getElementById("result");
   resultDiv.style.display = "block";
-  resultDiv.innerHTML = "Your Akan name is: <strong>" + akanName + "</strong";
+  resultDiv.innerHTML = "Your Akan name is: <strong>" + akanName + "</strong>";
 }
