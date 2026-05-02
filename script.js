@@ -29,17 +29,16 @@ function getAkanName() {
         alert("Please select a gender.");
         return;
     }
-}
 
 
-// Calculate the day of the week using provided formula
-const CC = Math.floor(year / 100);
-const YY = year % 100;
-const MM = month;
-const DD = day;
 
-let d = (Math.floor((4 * CC - 2 * -1) + (45 * YY) + (1026 * (MM +1)) + DD)) % 7;
+   // Calculate the day of the week using the given formula
+  const CC = Math.floor(year / 100);
+  const YY = year % 100;
+  const MM = month;
+  const DD = day;
 
+  let d = (Math.floor((4 * CC - 2 * CC - 1) + (45 * YY) + (1026 * (MM + 1)) + DD)) % 7;
  // Make sure d is not negative
   if (d < 0) {
     d = d + 7;
@@ -53,4 +52,8 @@ let d = (Math.floor((4 * CC - 2 * -1) + (45 * YY) + (1026 * (MM +1)) + DD)) % 7;
     akanName = femaleNames[d];
   }
 
-  
+  // Show the Result
+  const resultDiv = document.getElementById("result");
+  resultDiv.style.display = "block";
+  resultDiv.innerHTML = "Your Akan name is: <strong>" + akanName + "</strong";
+}
