@@ -30,3 +30,14 @@ function getAkanName() {
         return;
     }
 }
+
+
+// Calculate the day of the week using provided formula
+var CC = Math.floor(year / 100);
+var YY = year % 100;
+var MM = month;
+var DD = day;
+
+var d = (Math.floor((4 * CC - 2 * -1) + (45 * YY) + (1026 * (MM +1)) + DD)) % 7;
+
+// Make
