@@ -45,7 +45,7 @@ function getAkanName() {
   if (d < 0) {
     d = d + 7;
   }
-
+  
 
   // Pick name based on gender
     let akanName = "";
