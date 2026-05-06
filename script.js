@@ -1,5 +1,5 @@
 // Arrays for Akan names based on day of the week
-const maleNames = ["Kwasi", "Kwado", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
+const maleNames = ["Kwasi", "Kwadwo", "Kwabena", "Kwaku", "Yaw", "Kofi", "Kwame"];
 const femaleNames = ["Akosua", "Adwoa", "Abenaa", "Akua", "Yaa", "Afua", "Ama"];
 
 function getAkanName() {
@@ -33,16 +33,19 @@ function getAkanName() {
 
 
    // Calculate the day of the week using the given formula
-  const CC = Math.floor(year / 100);
-  const YY = year % 100;
+  const CC = parseInt(String(year).slice(0, 2));
+  const YY = parseInt(String(year).slice(2, 4));
   const MM = month;
   const DD = day;
 
-  let d = (Math.floor((4 * CC - 2 * CC - 1) + (45 * YY) + (1026 * (MM + 1)) + DD)) % 7;
- // Make sure d is not negative
+  let d = ((4 * CC - 2 * CC - 1) + (45 * YY) + (10*26 * (MM + 1)) + DD) % 7;
+  d = Math.floor(d);
+
+  // Make sure d is not negative
   if (d < 0) {
     d = d + 7;
   }
+
 
   // Pick name based on gender
     let akanName = "";
@@ -56,4 +59,10 @@ function getAkanName() {
   const resultDiv = document.getElementById("result");
   resultDiv.style.display = "block";
   resultDiv.innerHTML = "Your Akan name is: <strong>" + akanName + "</strong>";
+ 
+  //Form Reset
+  document.getElementById("day").value = "";
+  document.getElementById("month").value = "";
+  document.getElementById("year").value = "";
+  document.getElementById("gender").value = "";
 }
